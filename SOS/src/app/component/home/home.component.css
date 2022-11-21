@@ -1,0 +1,56 @@
+.supervisorTable {
+  text-align: center;
+  display: block;
+  margin-top: 100px;
+  margin-left: 20px;
+  width: 96.5%;
+  border: 1.5px solid rgb(161, 161, 161);
+  height: 455px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+td,
+th {
+  text-align: center;
+  font-size: 12px;
+  text-transform: capitalize;
+  border: 1px solid rgb(83, 83, 83);
+  width: 180px;
+}
+
+tr {
+  border: 1px solid rgb(0, 0, 0);
+  height: 30px !important;
+  padding: 3px;
+}
+
+th {
+  font-size: 13px;
+  background-color: rgb(120, 167, 123);
+}
+
+th-matHeaderCellDef {
+  height: 18px;
+}
+
+.toLowerCase {
+  text-transform: uppercase;
+}
+
+.centerdisplay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.green-svg {
+  fill: #6dd400;
+}
+
+.gray-svg {
+  fill: #f50808;
+}

@@ -1,0 +1,69 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <a (click)="navigate('welcome')" title="Welcome">
+    <img title="Welcome" width="40" alt="SOS Logo" src="../../../assets/sos_logo_mini.jpg" /></a>
+  <span>SEARCH ONLINE SUPERVISOR</span>
+  <div class="pl"></div>
+  <div class="spacer"></div>
+  <a (click)="navigate('login')" title="Home">
+    <i class="material-icons icon-light">home</i>
+  </a>
+  <a (click)="navigate('contactus')" title="Write to us">
+    <i class="material-icons icon-light">email</i>
+  </a>
+  <a (click)="navigate('about')" title="About SOS">
+    <i class="material-icons icon-light">chrome_reader_mode</i>
+  </a>
+</div>
+
+
+<!-- Body of the content -->
+<div class="content">
+  <div class="container mt-5">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <div class="form-data">
+            <div class="forms-inputs mb-4">
+              <input placeholder="Email ID" type="text" formControlName="email" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" [(ngModel)]="mail" />
+              <div *ngIf="submitted && f['email'].errors" class="text-danger">
+                <div *ngIf="f['email'].errors['required']">Email is required</div>
+                <div *ngIf="f['email'].errors['pattern']">Email is invalid</div>
+              </div>
+            </div>
+            <div class="forms-inputs mb-4">
+              <input autocomplete="off" placeholder="Username" type="text" formControlName="username"
+                class="form-control" [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+                [(ngModel)]="username">
+              <div *ngIf="submitted && f['username'].errors" class="text-danger">
+                <div *ngIf="f['username'].errors['required']">Username is required</div>
+                <div *ngIf="f['username'].errors['minlength'] || f['username'].errors['maxlength']">Username should be 6
+                  to 20 characters long</div>
+              </div>
+            </div>
+            <div class="forms-inputs mb-4">
+              <input autocomplete="off" placeholder="Password" type="password" formControlName="password"
+                class="form-control" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+                [(ngModel)]="password">
+              <div *ngIf="submitted && f['password'].errors" class="text-danger">
+                <div *ngIf="f['password'].errors['required']">Password is required</div>
+                <div *ngIf="f['password'].errors['minlength'] || f['password'].errors['maxlength']">Password should be 6
+                  to 12 characters long</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <a>
+                <button class="btn btn-dark w-100" type="submit">Register</button></a>
+              <!-- [disabled]="!mail || !username || !password" -->
+            </div>
+            <div class="mb-3">
+              <a (click)="navigate('signin')">
+                <button class="btn btn-dark w-100" type="submit">Login</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

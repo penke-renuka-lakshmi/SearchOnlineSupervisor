@@ -1,0 +1,75 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <a (click)="navigate('welcome')" title="Welcome">
+    <img title="Welcome" width="40" alt="SOS Logo" src="../../../assets/sos_logo_mini.jpg" /></a>
+  <span>SEARCH ONLINE SUPERVISOR</span>
+  <div class="pl"></div>
+  <div class="spacer"></div>
+  <a (click)="navigate('signin')" title="Home">
+    <i class="material-icons icon-light">home</i>
+  </a>
+  <a (click)="contactUs()" title="Write to us">
+    <i class="material-icons icon-light">email</i>
+  </a>
+  <a (click)="navigate('about')" title="About SOS">
+    <i class="material-icons icon-light">chrome_reader_mode</i>
+  </a>
+</div>
+
+<!-- Body of the content -->
+
+<body>
+  <div class="content">
+    <h1>Hello there! Welcome to SOS.</h1><br>
+    <h3>What do you want to do?</h3>
+    <div class="card-container">
+
+      <a class="card" (click)="navigate('signup')">
+        <i class="material-icons icon-dark">person_add</i>
+        <span>Signup</span>
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+        </svg>
+      </a>
+
+      <a class="card" (click)="navigate('signin')">
+        <i class="material-icons icon-dark">person</i>
+        <span>Signin</span>
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+        </svg>
+      </a>
+
+    </div>
+    <br>
+    <!-- Links -->
+    <div class="card-container">
+
+      <a class="circle-link" title="Very dissatisfied" (click)="feedback('very_dissatisfied')">
+        <i class="material-icons">sentiment_very_dissatisfied</i>
+      </a>
+
+      <a class="circle-link" title="Dissatisfied" (click)="feedback('dissatisfied')">
+        <i class="material-icons">sentiment_dissatisfied</i>
+      </a>
+
+      <a class="circle-link" title="Neutral" (click)="feedback('neutral')">
+        <i class="material-icons">sentiment_neutral</i>
+      </a>
+
+      <a class="circle-link" title="Satisfied" (click)="feedback('satisfied')">
+        <i class="material-icons">sentiment_satisfied</i>
+      </a>
+
+      <a class="circle-link" title="Very satisfied" (click)="feedback('very_satisfied')">
+        <i class="material-icons">sentiment_very_satisfied</i>
+      </a>
+
+    </div>
+    <!-- Footer -->
+    <footer>
+      Love SOS?&nbsp;
+      <a> Share your feedback.</a>
+    </footer>
+  </div>
+</body>
